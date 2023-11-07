@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Uma ToDo List adorável para anotar seus afazeres diários!" />
+  <title>ToDo List! – Minha lista de tarefas</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+        <div id="theme-open" class="fas fa-bars"></div>
+        <div class="menu-bars"></div>
+        <div class="themes-container">
+          <div id="theme-close" class="fas fa-times"></div>
+          <div class="theme-toggler">
+            <p>Claro</p>
+            <p class="toggler"></p>
+            <p>Noturno</p>
+          </div>
+          <h3>Escolha um tema</h3>
+          <div class="theme-colors">
+            <div class="color" style="background:#F7B1BE;"></div>
+            <div class="color" style="background:#A2D6D7"></div>
+            <div class="color" style="background:#ACD9C2;"></div>
+            <div class="color" style="background:#C1ABD2;"></div>
+            <div class="color" style="background:#E9C57F;"></div>
+          </div>
+        </div>
+      <div class="todo-container">
+        <header>
+          <h1 id="saudacao"></h1>
+          <p id="todayDate"></p>
+        </header>
+      </div>
+      <div class="todo-container">
+        <header>
+          <h1>ToDo List!</h1>
+        </header>
+        <form id="todo-form">
+          <p>Adicione sua tarefa:</p>
+          <div class="form-control">
+            <input type="text" id="todo-input" maxlength="20" placeholder="Digite sua tarefa..." />
+            <button type="submit">
+              <i class="fa-thin fa-plus"></i>
+            </button>
+          </div>
+        </form>
+        <form id="edit-form" class="hide">
+          <p>Edite sua tarefa</p>
+          <div class="form-control">
+            <input type="text" id="edit-input" maxlength="20/>
+            <button type=" submit">
+            <i class="fa-solid fa-check-double"></i>
+            </button>
+          </div>
+          <button id="cancel-edit-btn">Cancelar</button>
+        </form>
+        <div id="toolbar">
+          <div id="search">
+            <h4>Pesquisar:</h4>
+            <form>
+              <input type="text" id="search-input" placeholder="Buscar..." />
+              <button id="erase-button">
+                <i class="fa-solid fa-delete-left"></i>
+              </button>
+            </form>
+          </div>
+          <div id="filter">
+            <h4>Filtrar:</h4>
+            <select id="filter-select">
+              <option value="all">Todos</option>
+              <option value="done">Concluídos</option>
+              <option value="todo">Pendentes</option>
+            </select>
+          </div>
+        </div>
+        <div id="todo-list">
+          <!-- <div class="todo">
+              <h3>Tarefa 1</h3>
+              <button class="finish-todo">
+                <i class="fa-solid fa-check"></i>
+              </button>
+              <button class="edit-todo">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+              <button class="remove-todo">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div> -->
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>
