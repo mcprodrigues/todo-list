@@ -106,6 +106,7 @@ const filterBtn = document.querySelector("#filter-select");
 
 let oldInputValue;
 
+// Funções
 const saveTodo = (text, done = 0, save = 1) => {
   const todo = document.createElement("div");
   todo.classList.add("todo");
@@ -126,9 +127,10 @@ const saveTodo = (text, done = 0, save = 1) => {
 
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.add("remove-todo");
-  deleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
+  deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
   todo.appendChild(deleteBtn);
 
+  // Utilizando dados da localStorage
   if (done) {
     todo.classList.add("done");
   }
@@ -157,6 +159,7 @@ const updateTodo = (text) => {
     if (todoTitle.innerText === oldInputValue) {
       todoTitle.innerText = text;
 
+      // Utilizando dados da localStorage
       updateTodoLocalStorage(oldInputValue, text);
     }
   });
@@ -177,7 +180,6 @@ const getSearchedTodos = (search) => {
     }
   });
 };
-
 
 const filterTodos = (filterValue) => {
   const todos = document.querySelectorAll(".todo");
@@ -211,6 +213,7 @@ const filterTodos = (filterValue) => {
   }
 };
 
+// Eventos
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -239,6 +242,7 @@ document.addEventListener("click", (e) => {
   if (targetEl.classList.contains("remove-todo")) {
     parentEl.remove();
 
+    // Utilizando dados da localStorage
     removeTodoLocalStorage(todoTitle);
   }
 
@@ -287,6 +291,7 @@ filterBtn.addEventListener("change", (e) => {
   filterTodos(filterValue);
 });
 
+// Local Storage
 const getTodosLocalStorage = () => {
   const todos = JSON.parse(localStorage.getItem("todos")) || [];
 
