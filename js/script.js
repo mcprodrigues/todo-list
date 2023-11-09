@@ -173,9 +173,7 @@ const getSearchedTodos = (search) => {
 
     todo.style.display = "flex";
 
-    console.log(todoTitle);
-
-    if (!todoTitle.includes(search)) {
+    if (!todoTitle.includes(search.toLowerCase())) {
       todo.style.display = "none";
     }
   });
